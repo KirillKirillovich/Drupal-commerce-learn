@@ -1,0 +1,4 @@
+name: Generate Term Menu
+description: Generate Term Menu Type
+core: 8.x
+type: module

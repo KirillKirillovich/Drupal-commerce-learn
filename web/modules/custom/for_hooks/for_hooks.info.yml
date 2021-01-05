@@ -1,0 +1,4 @@
+name: for hooks
+description: module for hooks
+core: 8.x
+type: module

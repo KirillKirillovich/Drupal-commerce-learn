@@ -1,0 +1,9 @@
+<div class ="random_view_offer">
+  {% if test == 0 %}
+    <div> {{ drupal_view('new', 'block_1') }} </div>
+  {% elseif test == 1 %}
+    <div> {{ drupal_view('new', 'block_3') }} </div>
+  {% else %}
+    <div> {{ drupal_view('new', 'block_2') }} </div>
+  {% endif %}
+</div>

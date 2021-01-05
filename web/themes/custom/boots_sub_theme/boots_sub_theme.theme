@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Bootstrap sub-theme.
+ *
+ * Place your custom PHP code in this file.
+ */
+
+
+
+
+
+function boots_sub_theme_preprocess_block(&$variables, $hook) {
+
+  if($variables['derivative_plugin_id'] == 'views_block__random_views_block_1') {
+    //-- This stops the block being cache in drupal 8
+    $vars['#cache']['max-age'] = 0;
+  }
+
+  $rand = rand(0, 2);
+  $variables['test'] = $rand;
+}
+
+function boots_sub_theme_preprocess_views_view_field(&$variables) {
+  $view_id = $variables['view']->id();
+  $field = $variables['field'];
+}
+
+function boots_sub_theme_views_pre_render(\Drupal\views\ViewExecutable $view) {
+  \Drupal::service('page_cache_kill_switch')->trigger();
+}
+
+
+

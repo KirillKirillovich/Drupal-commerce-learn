@@ -1,0 +1,4 @@
+name: Table price
+description: table price module
+core: 8.x
+type: module

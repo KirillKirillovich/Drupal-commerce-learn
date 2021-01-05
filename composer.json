@@ -1,0 +1,121 @@
+{
+    "name": "drupal-composer/drupal-project",
+    "description": "Project template for Drupal 8 projects with composer",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "",
+            "role": ""
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "composer/installers": "^1.2",
+        "cweagans/composer-patches": "^1.6.5",
+        "drupal-composer/drupal-scaffold": "^2.5",
+        "drupal/admin_toolbar": "^2.4",
+        "drupal/back_to_top": "^1.1",
+        "drupal/backup_migrate": "^4.1",
+        "drupal/better_social_sharing_buttons": "^3.1",
+        "drupal/blazy": "^2.1",
+        "drupal/bootstrap": "^3.23",
+        "drupal/commerce": "^2.21",
+        "drupal/commerce_bulk": "^1.0@beta",
+        "drupal/commerce_price_rule": "^1.0@alpha",
+        "drupal/commerce_pricelist": "^2.1",
+        "drupal/commerce_shipping": "^2.0@RC",
+        "drupal/console": "^1.0.2",
+        "drupal/core": "^8.7.1",
+        "drupal/devel": "^4.0",
+        "drupal/disqus": "^1.0@RC",
+        "drupal/double_field": "^3.4",
+        "drupal/entity_usage": "^2.0@beta",
+        "drupal/facets": "^1.5",
+        "drupal/field_group": "^3.1",
+        "drupal/geolocation": "^3.2",
+        "drupal/google_map_field": "^1.14",
+        "drupal/imageapi_optimize": "^4.0@beta",
+        "drupal/imageapi_optimize_resmushit": "^2.0@beta",
+        "drupal/lazy": "^3.6",
+        "drupal/lazyloader": "^1.0@alpha",
+        "drupal/metatag": "^1.14",
+        "drupal/paragraphs": "^1.12",
+        "drupal/pathauto": "^1.8",
+        "drupal/price_difference_formatter": "^1.2",
+        "drupal/search_api": "^1.18",
+        "drupal/search_api_solr": "^4.1",
+        "drupal/sharerich": "^1.2",
+        "drupal/slick": "^2.2",
+        "drupal/slick_views": "^2.3",
+        "drupal/superfish": "^1.4",
+        "drupal/taxonomy_menu": "^3.4",
+        "drupal/twig_tweak": "^2.9",
+        "drupal/views_infinite_scroll": "^1.7",
+        "drupal/visitors": "^2.7",
+        "drupal/webform": "^5.22",
+        "drush/drush": "^9.0.0",
+        "kint-php/kint": "^3.3",
+        "vlucas/phpdotenv": "^2.4",
+        "webflo/drupal-finder": "^1.0.0",
+        "webmozart/path-util": "^2.3",
+        "zaporylie/composer-drupal-optimizations": "^1.0"
+    },
+    "require-dev": {
+        "webflo/drupal-core-require-dev": "^8.7.0"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "classmap": [
+            "scripts/composer/ScriptHandler.php"
+        ],
+        "files": ["load.environment.php"]
+    },
+    "scripts": {
+        "pre-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "pre-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "post-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ]
+    },
+    "extra": {
+        "composer-exit-on-patch-failure": true,
+        "patchLevel": {
+            "drupal/core": "-p2"
+        },
+        "installer-paths": {
+            "web/core": ["type:drupal-core"],
+            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/modules/contrib/{$name}": ["type:drupal-module"],
+            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "drush/Commands/{$name}": ["type:drupal-drush"]
+        },
+        "drupal-scaffold": {
+            "initial": {
+                ".editorconfig": "../.editorconfig",
+                ".gitattributes": "../.gitattributes"
+            }
+        }
+    }
+}

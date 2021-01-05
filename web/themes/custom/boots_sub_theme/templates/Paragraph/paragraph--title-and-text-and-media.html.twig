@@ -1,0 +1,19 @@
+<div class="paragraph_title_text_media_layout">
+  {% if content.field_title_text_media | render %}
+    <div class="paragraph_title_text_media_title">
+      {{ content.field_title_text_media }}
+    </div>
+  {% endif %}
+
+  {% if content.field_text_title_media | render %}
+    <div class="paragraph_title_text_media_text">
+      {{ content.field_text_title_media }}
+    </div>
+  {% endif %}
+
+  {% if content.field_media | render %}
+        <div class="paragraph_title_text_media_media">
+         {{ content.field_media }}
+        </div>
+  {% endif %}
+</div>

@@ -1,0 +1,3 @@
+gen_menu_term.term_links:
+  deriver: \Drupal\modulename\Plugin\Derivative\TermLinksDeriver
+  menu_name: main

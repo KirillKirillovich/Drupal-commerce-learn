@@ -1,0 +1,13 @@
+<div class="paragraph_title_text_layout">
+  {% if content.field_title_text | render %}
+    <div class="paragraph_title_text_title">
+      {{ content.field_title_text }}
+    </div>
+  {% endif %}
+
+  {% if content.field_text | render %}
+    <div class="paragraph_title_text_text">
+      {{ content.field_text }}
+    </div>
+  {% endif %}
+</div>

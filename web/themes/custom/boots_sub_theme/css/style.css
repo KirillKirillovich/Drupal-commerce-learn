@@ -258,7 +258,13 @@ h2 {
   justify-content: center;
 }
 .all-product-views .views-exposed-form input {
-  width: 665px;
+  width: 450px;
+}
+.all-product-views .views-exposed-form .form-item-number-min input {
+  width: 50px;
+}
+.all-product-views .views-exposed-form .form-item-number-max input {
+  width: 50px;
 }
 
 /****** BLOCK SIZE TABLE *****/
